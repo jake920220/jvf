@@ -1,0 +1,13 @@
+{
+  "name": "jvf",
+  "version": "1.0.0",
+  "main": "app.js",
+  "author": "junhyun",
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.8.1",
+    "koa-bodyparser": "^4.2.1",
+    "koa-ejs": "^4.2.0",
+    "koa-useragent": "^2.1.3"
+  }
+}
