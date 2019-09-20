@@ -5,8 +5,9 @@
   "author": "junhyun",
   "license": "MIT",
   "scripts": {
-    "dev": "webpack-dev-server",
-    "start": "webpack-dev-server"
+    "dev": "webpack-dev-server --mode development",
+    "start": "webpack-dev-server",
+    "build": "webpack -p"
   },
   "dependencies": {
     "css-loader": "^3.2.0",
@@ -19,7 +20,6 @@
     "@babel/core": "^7.6.0",
     "@babel/preset-env": "^7.6.0",
     "babel-loader": "^8.0.6",
-    "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.8.0",
     "url-loader": "^2.1.0",
     "vue-loader": "^15.7.1",

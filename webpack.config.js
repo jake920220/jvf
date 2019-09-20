@@ -6,7 +6,7 @@ const webpack = require('webpack');
 
 const webpackConfig = {
     entry: {
-        polyfill: '@babel/polyfill'
+        app: './src/index.js'
     },
     output: {
         path: path.resolve(__dirname, './dist'),
