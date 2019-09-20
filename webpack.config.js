@@ -15,8 +15,10 @@ const webpackConfig = {
     devtool: 'inline-source-map',
     devServer: {
         contentBase: path.join(__dirname, "./dist"),
+        historyApiFallback: true,
         port: 9000,
         open: true,
+        overlay: true,
         hot: true, //hot module replacement
     },
     resolve: {
@@ -56,7 +58,7 @@ const webpackConfig = {
     plugins: [
         new vueLoaderPlugin(),
         new htmlPlugin({
-            template: './src/index.html',
+            template: path.resolve(__dirname, './src', 'index.html'),
             chunksSortMode: 'dependency',
         }),
         new miniCssExtractPlugin({
