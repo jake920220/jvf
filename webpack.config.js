@@ -6,7 +6,7 @@ const webpack = require('webpack');
 
 const webpackConfig = {
     entry: {
-        app: './src/index.js'
+        app: './src/main.js'
     },
     output: {
         path: path.resolve(__dirname, './dist'),
@@ -17,13 +17,13 @@ const webpackConfig = {
         contentBase: path.join(__dirname, "./dist"),
         port: 9000,
         open: true,
-        hot: true
+        hot: true, //hot module replacement
     },
     resolve: {
         extensions: ['.js', '.vue'],
-        alias: {
-            '@': path.resolve(__dirname, 'src/')
-        }
+        // alias: {
+        //     '@': path.resolve(__dirname, './src')
+        // }
     },
     module: {
         rules: [
@@ -62,7 +62,8 @@ const webpackConfig = {
         new miniCssExtractPlugin({
             filename: '[name].css',
             chunkFilename: '[name].css'
-        })
+        }),
+        new webpack.HotModuleReplacementPlugin()
     ]
 };
 
