@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    {{ message }}
+    <router-view/>
   </div>
 </template>
 
@@ -8,7 +8,7 @@
 export default {
   data() {
     return {
-      message: 'Hello World',
+      message: '빌드 테스트 tttttt',
     };
   },
 };
