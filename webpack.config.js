@@ -12,6 +12,10 @@ const webpackConfig = {
         path: path.resolve(__dirname, './dist'),
         filename: "[name].js"
     },
+    minify: {
+        collapseWhitespace: true,
+    },
+    hash: true,
     devtool: 'inline-source-map',
     devServer: {
         contentBase: path.join(__dirname, "./dist"),

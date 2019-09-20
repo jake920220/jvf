@@ -1,5 +1,5 @@
 <template>
-<div>
+<div id="indexPage">
     index page
 
     <router-link to='/login'>로그인</router-link>

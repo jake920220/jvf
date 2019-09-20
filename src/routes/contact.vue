@@ -1,5 +1,5 @@
 <template>
-<div>
+<div id="contactPage">
     contact page
 
     <router-link to='/'>인덱스</router-link>
