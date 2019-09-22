@@ -6,3 +6,11 @@
     <router-link to='/contact'>문의</router-link>
 </div>
 </template>
+
+<script>
+export default {
+  created() {
+    console.log(this.$store.state.count);
+  }
+};
+</script>

@@ -6,11 +6,9 @@
 
 <script>
 export default {
-  data() {
-    return {
-      message: '빌드 테스트 tttttt',
-    };
-  },
+  created() {
+    console.log("app created");
+  }
 };
 </script>
 
