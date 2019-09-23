@@ -1,14 +1,21 @@
 <template>
 <div>
   <hr>
-  Child counter : {{ this.$store.state.counter }} <br>
+  Child counter : {{ renderCounter }} <br>
 </div>
 </template>
 
 <script>
+    import { mapGetters } from 'vuex';
+
     export default {
         created() {
             console.log("child component created");
-        }
+        },
+        computed: {
+            ...mapGetters({
+                renderCounter: 'getCounter'
+            }),
+        },
     }
 </script>
