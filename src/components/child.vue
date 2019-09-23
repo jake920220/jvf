@@ -14,7 +14,7 @@
         },
         computed: {
             ...mapGetters({
-                renderCounter: 'getCounter'
+                renderCounter: 'counter/getCounter'
             }),
         },
     }

@@ -16,16 +16,14 @@ import Child from '../components/child';
 import {mapMutations, mapActions} from 'vuex';
 
 export default {
-  created() {
-    console.log("state?",this.$store.state.counter);
-  },
+  created() {},
   methods: {
-    ...mapMutations([
-      'addCounter',
-    ]),
-    ...mapActions([
-      'addCounterAction'
-    ]),
+    ...mapMutations({
+      addCounter: 'counter/addCounter',
+    }),
+    ...mapActions({
+      addCounterAction: 'counter/addCounterAction',
+    }),
     subCounter,
   },
   components: {
@@ -33,13 +31,7 @@ export default {
   }
 };
 
-function addCounterAction() {
-  this.$store.dispatch('addCounterAction');
-};
-
-
-
 function subCounter() {
-  this.$store.state.counter--;
+  this.$store.state.counter.counter--;
 };
 </script>
