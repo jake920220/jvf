@@ -10,7 +10,7 @@
 <script>
 export default {
   created() {
-    console.log(this.$store.state.count);
+    console.log("state?",this.$store.state);
   }
 };
 </script>
