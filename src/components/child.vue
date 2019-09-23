@@ -9,9 +9,7 @@
     import { mapGetters } from 'vuex';
 
     export default {
-        created() {
-            console.log("child component created");
-        },
+        created() {},
         computed: {
             ...mapGetters({
                 renderCounter: 'counter/getCounter'

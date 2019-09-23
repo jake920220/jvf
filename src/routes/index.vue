@@ -12,11 +12,14 @@
 </template>
 
 <script>
+import testManager from '../managers/test';
 import Child from '../components/child';
 import {mapMutations, mapActions} from 'vuex';
 
 export default {
-  created() {},
+  created() {
+    getTestAPI();
+  },
   methods: {
     ...mapMutations({
       addCounter: 'counter/addCounter',
@@ -29,6 +32,12 @@ export default {
   components: {
     'child': Child
   }
+};
+
+function getTestAPI() {
+  testManager.findAll({}, (status, data) => {
+    console.log("?", status, data);
+  });
 };
 
 function subCounter() {

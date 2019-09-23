@@ -7,8 +7,6 @@ import store from './store/index';
 
 Vue.use(VueRouter);
 
-console.log("hello", store);
-
 new Vue({
     el: '#app',
     router,

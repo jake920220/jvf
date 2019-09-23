@@ -10,7 +10,7 @@ const webpackConfig = {
     },
     output: {
         path: path.resolve(__dirname, './dist'),
-        filename: "[name].js"
+        filename: `[name].[hash].js`
     },
     devtool: 'inline-source-map',
     devServer: {
@@ -59,8 +59,8 @@ const webpackConfig = {
             chunksSortMode: 'dependency',
         }),
         new miniCssExtractPlugin({
-            filename: '[name].css',
-            chunkFilename: '[name].css'
+            filename: '[name].[hash].css',
+            chunkFilename: `[name].chunk.css`
         }),
         new webpack.HotModuleReplacementPlugin()
     ]
