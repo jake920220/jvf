@@ -1,3 +1,4 @@
+import "babel-polyfill";
 import axios from 'axios';
 import resource from '../constants/resource';
 
@@ -45,48 +46,78 @@ class Http {
         this.options = {};
     }
 
-    post(body) {
-        return axios.post(this.url, body, this.options).catch(refineError);
+    async post(body) {
+        try {
+            return axios.post(this.url, body, this.options);
+        }
+        catch (err) {
+            return refineError(err);
+        }
     }
 
-    postFormData(body, param) {
+    async postFormData(body, param) {
         let url = this.url;
         if (param) {
             url += `/${param}`;
         }
-        return axios.post(url, body, {
-            headers: {
-                "Content-Type": "multipart/form-data"
-            }
-        }).catch(refineError);
+        try {
+            return axios.post(url, body, {
+                headers: {
+                    "Content-Type": "multipart/form-data"
+                }
+            });
+        }
+        catch (err) {
+            return refineError(err);
+        }
     }
 
-    get(id) {
-        return axios.get(this.url + '/' + id, this.options).catch(refineError);
+    async get(id) {
+        try {
+            return axios.get(this.url + '/' + id, this.options);
+        }
+        catch (err) {
+            return refineError(err);
+        }
     }
-    gets(query) {
-        return axios.get(this.url + generateQuery(query), this.options).catch(refineError);
+    async gets(query) {
+        try {
+            return axios.get(this.url + generateQuery(query), this.options);
+        }
+        catch (err) {
+            return refineError(err);
+        }
     }
-    put(body) {
+    async put(body) {
         let url = this.url;
         if (body.id) {
             url += `/${body.id}`;
             delete body.id;
         }
-        return axios.put(url, body, this.options).catch(refineError);
+        try {
+            return axios.put(url, body, this.options);
+        }
+        catch (err) {
+            return refineError(err);
+        }
     }
-    delete(query) {
+    async delete(query) {
         let url = this.url;
         if (query.id) {
             url += `/${query.id}`;
             delete query.id;
         }
-        return axios({
-            method: 'delete',
-            url: url,
-            data: query,
-            headers: this.options.headers
-        }).catch(refineError);
+        try {
+            return axios({
+                method: 'delete',
+                url: url,
+                data: query,
+                headers: this.options.headers
+            });
+        }
+        catch (err) {
+            return refineError(err);
+        }
     }
 }
 

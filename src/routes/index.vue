@@ -17,8 +17,8 @@ import Child from '../components/child';
 import {mapMutations, mapActions} from 'vuex';
 
 export default {
-  created() {
-    getTestAPI();
+  async created() {
+    await getTestAPI();
   },
   methods: {
     ...mapMutations({
@@ -34,10 +34,13 @@ export default {
   }
 };
 
-function getTestAPI() {
-  testManager.findAll({}, (status, data) => {
-    console.log("?", status, data);
-  });
+async function getTestAPI() {
+  // testManager.findAll({}, (status, data) => {
+  //   console.log("?", status, data);
+  // });
+
+  let {status, data} = await testManager.findAll({});
+  console.log("?", status, data);
 };
 
 function subCounter() {
