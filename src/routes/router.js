@@ -7,8 +7,8 @@ import Contact from './contact.vue';
 export default new VueRouter({
     mode: 'history',
     routes: [
-        { path: '/', name: "index", component: Index },
-        { path: '/login', name: "login", component: Login },
-        { path: '/contact', name: "contact", component: Contact },
+        { path: '/', name: "index", component: () => import('./index.vue') },
+        { path: '/login', name: "login", component: () => import('./login.vue') },
+        { path: '/contact', name: "contact", component: () => import('./contact.vue') },
     ],
 });

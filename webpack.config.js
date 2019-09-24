@@ -63,7 +63,12 @@ const webpackConfig = {
             chunkFilename: `[name].chunk.css`
         }),
         new webpack.HotModuleReplacementPlugin()
-    ]
+    ],
+    // performance: {
+    //     hints: /'warning'/,
+    //     maxEntrypointSize: 400000,
+    //     maxAssetSize: 300000,
+    // }
 };
 
 module.exports = webpackConfig;
