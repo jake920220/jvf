@@ -1,7 +1,6 @@
-import 'babel-polyfill';
 import Vue from 'vue';
 import Vuex from 'vuex';
-import counter from './moduels/counter';
+import counter from './modules/counter';
 
 Vue.use(Vuex);
 
