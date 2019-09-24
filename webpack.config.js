@@ -3,11 +3,10 @@ const miniCssExtractPlugin = require('mini-css-extract-plugin');
 const vueLoaderPlugin = require('vue-loader/lib/plugin');
 const htmlPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const webpackConfig = {
-    entry: {
-        app: './src/main.js'
-    },
+    entry: ['./src/main.js', './src/stylesheets/app.scss'],
     output: {
         path: path.resolve(__dirname, './dist'),
         filename: `[name].[hash].js`
@@ -53,6 +52,7 @@ const webpackConfig = {
         ]
     },
     plugins: [
+        new CleanWebpackPlugin(),
         new vueLoaderPlugin(),
         new htmlPlugin({
             template: path.resolve(__dirname, './src', 'index.html'),

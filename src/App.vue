@@ -6,7 +6,9 @@
 
 <script>
 export default {
-  created() {}
+  created() {
+    console.log("app running");
+  }
 };
 </script>
 
