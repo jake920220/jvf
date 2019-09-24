@@ -6,6 +6,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "webpack-dev-server --mode development",
+    "dev-host": "webpack-dev-server --host 192.168.131.129",
     "start": "webpack-dev-server",
     "build": "webpack -p"
   },
