@@ -8,12 +8,13 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const webpackConfig = {
     entry: ['./src/main.js', './src/stylesheets/app.scss'],
     output: {
+        publicPath: '/',
         path: path.resolve(__dirname, './dist'),
-        filename: `[name].[hash].js`
+        filename: `[name].[hash].js`,
     },
     // devtool: 'inline-source-map',
     devServer: {
-        contentBase: path.join(__dirname, "./dist"),
+        contentBase: path.join(__dirname, "./public"),
         historyApiFallback: true,
         port: 9000,
         open: true,
@@ -64,11 +65,6 @@ const webpackConfig = {
         }),
         new webpack.HotModuleReplacementPlugin()
     ],
-    // performance: {
-    //     hints: /'warning'/,
-    //     maxEntrypointSize: 400000,
-    //     maxAssetSize: 300000,
-    // }
 };
 
 module.exports = webpackConfig;
